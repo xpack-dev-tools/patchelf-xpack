@@ -164,9 +164,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/patchelf-xpack.git/build/darwin-x64/deploy
-total 1080
--rw-r--r--  1 ilg  staff  547972 May 17 09:50 xpack-patchelf-0.15.0-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff     111 May 17 09:50 xpack-patchelf-0.15.0-1-darwin-x64.tar.gz.sha
+total 224
+-rw-r--r--  1 ilg  staff  109290 Oct 24 23:28 xpack-patchelf-0.15.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff     108 Oct 24 23:28 xpack-patchelf-0.15.0-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -194,9 +194,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/patchelf-xpack.git/build/darwin-arm64/deploy
-total 1056
--rw-r--r--  1 ilg  staff  533014 May 17 09:49 xpack-patchelf-0.15.0-1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff     113 May 17 09:49 xpack-patchelf-0.15.0-1-darwin-arm64.tar.gz.sha
+total 200
+-rw-r--r--  1 ilg  staff  95328 Oct 24 23:28 xpack-patchelf-0.15.0-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff    110 Oct 24 23:28 xpack-patchelf-0.15.0-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -226,9 +226,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/patchelf-xpack.git/build/linux-x64/deploy
-total 1480
--rw-rw-rw- 1 ilg ilg 551495 May 17 09:49 xpack-patchelf-0.15.0-1-linux-x64.tar.gz
--rw-rw-rw- 1 ilg ilg    110 May 17 09:49 xpack-patchelf-0.15.0-1-linux-x64.tar.gz.sha
+total 904
+-rw-r--r-- 1 root root 918500 Oct 24 20:29 xpack-patchelf-0.15.0-1-linux-x64.tar.gz
+-rw-r--r-- 1 root root    107 Oct 24 20:29 xpack-patchelf-0.15.0-1-linux-x64.tar.gz.sha
 ```
 
 There are no Windows binaries.
@@ -258,9 +258,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/patchelf-xpack.git/build/linux-arm64/deploy
-total 532
--rw-rw-rw- 1 ilg ilg 538649 May 17 09:51 xpack-patchelf-0.15.0-1-linux-arm64.tar.gz
--rw-rw-rw- 1 ilg ilg    112 May 17 09:51 xpack-patchelf-0.15.0-1-linux-arm64.tar.gz.sha
+total 848
+-rw-r--r-- 1 root root 863136 Oct 24 20:31 xpack-patchelf-0.15.0-1-linux-arm64.tar.gz
+-rw-r--r-- 1 root root    109 Oct 24 20:31 xpack-patchelf-0.15.0-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -288,9 +288,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/patchelf-xpack.git/build/linux-arm/deploy
-total 500
--rw-rw-rw- 1 ilg ilg 506541 May 17 09:51 xpack-patchelf-0.15.0-1-linux-arm.tar.gz
--rw-rw-rw- 1 ilg ilg    110 May 17 09:51 xpack-patchelf-0.15.0-1-linux-arm.tar.gz.sha
+total 796
+-rw-r--r-- 1 root root 807383 Oct 24 20:31 xpack-patchelf-0.15.0-1-linux-arm.tar.gz
+-rw-r--r-- 1 root root    107 Oct 24 20:31 xpack-patchelf-0.15.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Files cache

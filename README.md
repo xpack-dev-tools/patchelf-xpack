@@ -103,13 +103,15 @@ xpacks/xpack-dev-tools-patchelf/.content/
 ├── README.md
 ├── bin
 │   └── patchelf
-└── distro-info
-    ├── CHANGELOG.md
-    ├── licenses
-    ├── patches
-    └── scripts
+├── distro-info
+│   ├── CHANGELOG.md
+│   ├── licenses
+│   ├── patches
+│   └── scripts
+└── share
+    └── doc
 
-5 directories, 3 files
+7 directories, 3 files
 ```
 
 No other files are installed in any system folders or other locations.
