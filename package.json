@@ -65,7 +65,7 @@
       "greadlink": "./.content/bin/patchelf"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.8.2"
+      "@xpack-dev-tools/xbb-helper": "^0.8.3"
     },
     "properties": {
       "appName": "NixOS PatchELF",
