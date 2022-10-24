@@ -156,12 +156,12 @@ like `0.15.0`;
 to this string the xPack distribution adds a four number,
 but since semver allows only three numbers, all additional ones can
 be added only as pre-release strings, separated by a dash,
-like `0.15.0-1`. When published as a npm package, the version gets
-a fifth number, like `0.15.0-1.1`.
+like `0.15.0-2`. When published as a npm package, the version gets
+a fifth number, like `0.15.0-2.1`.
 
 Since adherence of third party packages to semver is not guaranteed,
 it is recommended to use semver expressions like `^0.15.0` and `~0.15.0`
-with caution, and prefer exact matches, like `0.15.0-1.1`.
+with caution, and prefer exact matches, like `0.15.0-2.1`.
 
 ## Maintainer info
 
