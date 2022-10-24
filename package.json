@@ -1,0 +1,188 @@
+{
+  "name": "@xpack-dev-tools/patchelf",
+  "version": "0.15.0-1.1-pre",
+  "description": "A binary xPack with the NixOS PatchELF executable",
+  "main": "",
+  "scripts": {
+    "npm-install": "npm install",
+    "pack": "npm pack",
+    "version-patch": "npm version patch",
+    "version-minor": "npm version minor",
+    "postversion": "git push origin --all && git push origin --tags",
+    "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "liquidjs": "liquidjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpack-dev-tools/patchelf-xpack.git/"
+  },
+  "bugs": {
+    "url": "https://github.com/xpack-dev-tools/patchelf-xpack/issues/"
+  },
+  "homepage": "https://github.com/xpack-dev-tools/patchelf-xpack#readme",
+  "keywords": [
+    "xpack",
+    "nixos",
+    "patchelf"
+  ],
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "https://github.com/ilg-ul/"
+  },
+  "license": "MIT",
+  "xpack": {
+    "minimumXpmRequired": "0.14.0",
+    "binaries": {
+      "destination": "./.content",
+      "baseUrl": "https://github.com/xpack-dev-tools/patchelf-xpack/releases/download/v9.1.0-1",
+      "skip": 1,
+      "platforms": {
+        "linux-arm64": {
+          "fileName": "xpack-patchelf-9.1.0-1-linux-arm64.tar.gz",
+          "sha256": "c48ad71f26d9cdc7d09715f58f24c69bda61edf65d4d899f33a4e5b3a081b5a3"
+        },
+        "linux-arm": {
+          "fileName": "xpack-patchelf-9.1.0-1-linux-arm.tar.gz",
+          "sha256": "acdbe87fd262803862e9c3dfcd422604bb54d13731d88f631c136ed8e1c96c1f"
+        },
+        "linux-x64": {
+          "fileName": "xpack-patchelf-9.1.0-1-linux-x64.tar.gz",
+          "sha256": "514401d89f5c256153a2138668d5ad7a6aea67e6dac27e141a95f2440007b530"
+        }
+      }
+    },
+    "bin": {
+      "greadlink": "./.content/bin/patchelf"
+    },
+    "devDependencies": {
+      "@xpack-dev-tools/xbb-helper": "^0.8.2"
+    },
+    "properties": {
+      "appName": "NixOS PatchELF",
+      "appLCName": "patchelf",
+      "platforms": "linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64",
+      "LIQUIDJS": "liquidjs '{ \"XBB_APPLICATION_NAME\": \"{{ properties.appName }}\", \"XBB_APPLICATION_LOWER_CASE_NAME\": \"{{ properties.appLCName }}\", \"platforms\": \"{{ properties.platforms }}\" }'",
+      "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
+      "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
+      "commandBashBuild": "bash {{ properties.dbg }} scripts/build.sh --target {{ configuration.name }} --build-folder {{ properties.buildFolderRelativePathPosix }}",
+      "dbg": ""
+    },
+    "actions": {
+      "deep-clean": "rm -rf build xpacks node_modules package-lock.json",
+      "install": [
+        "npm install",
+        "xpm install"
+      ],
+      "link-deps": [
+        "xpm link @xpack-dev-tools/xbb-helper"
+      ],
+      "generate-workflows": [
+        "mkdir -p .github/workflows/",
+        "cp xpacks/xpack-dev-tools-xbb-helper/templates/body-github-pre-releases-test.md .github/workflows/",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-all.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-xbbli-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbli.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-xbbla32-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbla32.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-xbbla64-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbla64.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-xbbmi-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbmi.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/build-xbbma-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbma.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/test-prime-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-prime.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/test-docker-linux-intel-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-docker-linux-intel.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/test-docker-linux-arm-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-docker-linux-arm.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/publish-release-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/publish-release.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/test-xpm-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-xpm.yml",
+        "cat xpacks/xpack-dev-tools-xbb-helper/templates/deep-clean-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/deep-clean.yml"
+      ],
+      "trigger-workflow-build-all": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh",
+      "trigger-workflow-build-xbbli": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbli",
+      "trigger-workflow-build-xbbla64": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla64",
+      "trigger-workflow-build-xbbla32": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla32",
+      "trigger-workflow-build-xbbmi": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbmi",
+      "trigger-workflow-build-xbbma": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbma",
+      "trigger-workflow-test-prime": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-prime.sh",
+      "trigger-workflow-test-docker-linux-intel": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-intel.sh",
+      "trigger-workflow-test-docker-linux-arm": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-arm.sh",
+      "trigger-travis-macos": "bash xpacks/xpack-dev-tools-xbb-helper/travis/trigger-travis-macos.sh",
+      "trigger-workflow-publish-release": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-publish-release.sh",
+      "generate-jekyll-post": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/generate-jekyll-post.sh",
+      "update-package-binaries": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/update-package-binaries.sh",
+      "trigger-workflow-test-xpm": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-xpm.sh",
+      "trigger-workflow-deep-clean": "bash xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-deep-clean.sh",
+      "test-native": "bash {{ properties.dbg }} scripts/test.sh",
+      "test-pre-release": "bash {{ properties.dbg }} scripts/test.sh --base-url pre-release",
+      "test-xpm": "bash {{ properties.dbg }} scripts/test.sh --xpm",
+      "build-native": "bash {{ properties.dbg }} scripts/build.sh",
+      "build-native-develop": "bash {{ properties.dbg }} scripts/build.sh --develop",
+      "build-native-win": "bash {{ properties.dbg }} scripts/build.sh --windows",
+      "build-native-win-develop": "bash {{ properties.dbg }} scripts/build.sh --develop --windows"
+    },
+    "buildConfigurations": {
+      "common-dependencies": {
+        "hidden": true,
+        "devDependencies": {
+          "@xpack-dev-tools/cmake": "3.22.6-1.1",
+          "@xpack-dev-tools/ninja-build": "1.11.1-1.1"
+        }
+      },
+      "common-actions": {
+        "hidden": true,
+        "actions": {
+          "deep-clean": "rm -rf {{ properties.buildFolderRelativePathPosix }}",
+          "install": "xpm install --config {{ configuration.name }}",
+          "build": "{{ properties.commandBashBuild }}",
+          "build-develop": "{{ properties.commandBashBuild }} --develop",
+          "publish": "echo publish"
+        }
+      },
+      "darwin-x64": {
+        "inherit": [
+          "common-dependencies",
+          "common-actions"
+        ],
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "14.0.6-2.1",
+          "@xpack-dev-tools/realpath": "9.1.0-1.1"
+        }
+      },
+      "darwin-arm64": {
+        "inherit": [
+          "darwin-x64"
+        ]
+      },
+      "linux-x64": {
+        "inherit": [
+          "common-dependencies",
+          "common-actions"
+        ],
+        "devDependencies": {
+          "@xpack-dev-tools/gcc": "12.2.0-1.1"
+        },
+        "actions": {
+          "build": [
+            "[ -f '/.dockerenv' ] && apt-get install --yes make",
+            "{{ properties.commandBashBuild }}"
+          ],
+          "build-develop": [
+            "[ -f '/.dockerenv' ] && apt-get install --yes make",
+            "{{ properties.commandBashBuild }} --develop"
+          ]
+        }
+      },
+      "linux-arm64": {
+        "inherit": [
+          "linux-x64"
+        ]
+      },
+      "linux-arm": {
+        "inherit": [
+          "linux-x64"
+        ]
+      }
+    }
+  },
+  "bundleDependencies": [],
+  "devDependencies": {
+    "liquidjs": "^9.42.0"
+  }
+}
