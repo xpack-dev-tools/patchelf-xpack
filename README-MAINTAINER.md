@@ -432,8 +432,8 @@ Install the binaries on all platforms.
 On GNU/Linux and macOS systems, use:
 
 ```sh
-.../xpack-patchelf-0.15.0-1/bin/grealpath --version
-patchelf (GNU coreutils) 9.1
+.../xpack-patchelf-0.15.0-1/bin/patchelf --version
+patchelf 0.15.0
 ```
 
 ## Create a new GitHub pre-release draft
