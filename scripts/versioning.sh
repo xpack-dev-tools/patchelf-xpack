@@ -10,7 +10,7 @@
 
 # -----------------------------------------------------------------------------
 
-function build_versioned_components()
+function build_application_versioned_components()
 {
   # Don't use a comma since the regular expression
   # that processes this string in the Makefile, silently fails and the
@@ -25,6 +25,8 @@ function build_versioned_components()
     xbb_set_binaries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
     xbb_set_libraries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
+    # No dependencies.
+    
     xbb_set_binaries_install "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
 
     # https://ftp.gnu.org/gnu/coreutils/
