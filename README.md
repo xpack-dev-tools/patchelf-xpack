@@ -152,16 +152,16 @@ For more details please read the
 ### Versioning
 
 The version strings used by the NixOS patchelf project are three number strings
-like `0.15.0`;
+like `0.16.1`;
 to this string the xPack distribution adds a four number,
 but since semver allows only three numbers, all additional ones can
 be added only as pre-release strings, separated by a dash,
-like `0.15.0-2`. When published as a npm package, the version gets
-a fifth number, like `0.15.0-2.1`.
+like `0.16.1-1`. When published as a npm package, the version gets
+a fifth number, like `0.16.1-1.1`.
 
 Since adherence of third party packages to semver is not guaranteed,
-it is recommended to use semver expressions like `^0.15.0` and `~0.15.0`
-with caution, and prefer exact matches, like `0.15.0-2.1`.
+it is recommended to use semver expressions like `^0.16.1` and `~0.16.1`
+with caution, and prefer exact matches, like `0.16.1-1.1`.
 
 ## Maintainer info
 

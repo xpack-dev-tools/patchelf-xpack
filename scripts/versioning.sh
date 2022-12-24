@@ -12,20 +12,29 @@
 
 function application_build_versioned_components()
 {
-  # Don't use a comma since the regular expression
-  # that processes this string in the Makefile, silently fails and the
-  # bfdver.h file remains empty.
-  XBB_BRANDING="${XBB_APPLICATION_DISTRO_NAME} ${XBB_APPLICATION_NAME} ${XBB_REQUESTED_TARGET_MACHINE}"
-
   XBB_PATCHELF_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||')"
 
   # Keep them in sync with combo archive content.
-  if [[ "${XBB_RELEASE_VERSION}" =~ 0\.15\.0-* ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 0\.[0-9][0-9]*\.[0-9][0-9]*-* ]]
   then
+    # -------------------------------------------------------------------------
+    # Build the native dependencies.
+
+    # None
+
+    # -------------------------------------------------------------------------
+    # Build the target dependencies.
+
+    xbb_reset_env
+    xbb_set_target "requested"
+
     xbb_set_executables_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
-    # No dependencies.
+    # None
+
+    # -------------------------------------------------------------------------
+    # Build the application binaries.
 
     xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
