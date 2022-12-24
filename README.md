@@ -98,8 +98,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 xpacks/xpack-dev-tools-patchelf/.content/
-xpacks/xpack-dev-tools-patchelf/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/patchelf/0.16.1-1.1/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/patchelf/0.16.1-1.1/.content/
 ├── README.md
 ├── bin
 │   └── patchelf

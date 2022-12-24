@@ -143,6 +143,12 @@ Arm 32 GNU/Linux, Arm 64 GNU/Linux, Intel macOS and Apple Silicon macOS).
 
 Before the real build, run test builds on all platforms.
 
+#### Visual Studio Code
+
+All actions are defined as **xPack actions** and can be conveniently
+triggered via the VS Code graphical interface, using the
+[xPack extension](https://marketplace.visualstudio.com/items?itemName=ilg-vscode.xpack).
+
 #### Intel macOS
 
 For Intel macOS, first run the build on the development machine
