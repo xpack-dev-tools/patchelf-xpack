@@ -22,19 +22,20 @@ function application_build_versioned_components()
   # Keep them in sync with combo archive content.
   if [[ "${XBB_RELEASE_VERSION}" =~ 0\.15\.0-* ]]
   then
-    xbb_set_binaries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_executables_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # No dependencies.
-    
-    xbb_set_binaries_install "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
+
+    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # https://ftp.gnu.org/gnu/coreutils/
     patchelf_build "${XBB_PATCHELF_VERSION}"
 
     # -------------------------------------------------------------------------
   else
-    echo "Unsupported version ${XBB_RELEASE_VERSION}."
+    echo "Unsupported ${XBB_APPLICATION_LOWER_CASE_NAME} version ${XBB_RELEASE_VERSION}"
     exit 1
   fi
 }
