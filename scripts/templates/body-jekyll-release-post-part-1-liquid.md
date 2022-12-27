@@ -7,8 +7,8 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
-patchelf_version: 0.15.0
-patchelf_date: 16 Jul 2022
+patchelf_version: 0.16.1
+patchelf_date: 28 Oct 2022
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: 1
 download_url: https://github.com/xpack-dev-tools/patchelf-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
@@ -114,7 +114,7 @@ xpm uninstall --global @xpack-dev-tools/patchelf
 ## Compliance
 
 The xPack NixOS PatchELF generally follows the official
-[NixOS PatchELF](http://patchelf.org) releases.
+[NixOS PatchELF](https://github.com/NixOS/patchelf) releases.
 
 The current version is based on:
 
@@ -185,7 +185,7 @@ The scripts used to build this distribution are in:
 - `distro-info/scripts`
 
 For the prerequisites and more details on the build procedure, please see the
-[How to build](https://github.com/xpack-dev-tools/patchelf-xpack/blob/xpack/README-BUILD.md) page.
+[How to build](https://github.com/xpack-dev-tools/patchelf-xpack/blob/xpack/README-MAINTAINER.md) page.
 
 ## CI tests
 
