@@ -7,8 +7,8 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
-patchelf_version: 0.16.1
-patchelf_date: 28 Oct 2022
+patchelf_version: 0.17.0
+patchelf_date: 07 Nov 2022
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: 1
 download_url: https://github.com/xpack-dev-tools/patchelf-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
