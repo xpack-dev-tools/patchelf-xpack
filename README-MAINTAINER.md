@@ -350,6 +350,8 @@ Update the build scripts (or clone them at the first use):
 
 ```sh
 git -C ~/Work/patchelf-xpack.git pull && \
+xpm install -C ~/Work/patchelf-xpack.git && \
+xpm run link-deps -C ~/Work/patchelf-xpack.git && \
 xpm run deep-clean --config linux-arm -C ~/Work/patchelf-xpack.git && \
 xpm run docker-prepare --config linux-arm -C ~/Work/patchelf-xpack.git && \
 git -C ~/Work/xbb-helper-xpack.git pull && \
