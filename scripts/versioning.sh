@@ -15,7 +15,7 @@ function application_build_versioned_components()
   XBB_PATCHELF_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||')"
 
   # Keep them in sync with combo archive content.
-  if [[ "${XBB_RELEASE_VERSION}" =~ 0\.[0-9][0-9]*\.[0-9][0-9]*-* ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 0[.].*[.].*-.* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
