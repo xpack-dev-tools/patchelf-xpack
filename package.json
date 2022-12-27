@@ -36,28 +36,28 @@
     "minimumXpmRequired": "0.14.0",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/patchelf-xpack/releases/download/v0.16.1-1",
+      "baseUrl": "https://github.com/xpack-dev-tools/patchelf-xpack/releases/download/v0.17.0-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-patchelf-0.16.1-1-darwin-arm64.tar.gz",
-          "sha256": "aaddd5cc5b92aef9aaa90cd3fde9a81b888e643263f3f815cc50972d72145b8d"
+          "fileName": "xpack-patchelf-0.17.0-1-darwin-arm64.tar.gz",
+          "sha256": "f611e4e8626aa39044626932f1b4a58a5890954bb02918be2afc3923e0437882"
         },
         "darwin-x64": {
-          "fileName": "xpack-patchelf-0.16.1-1-darwin-x64.tar.gz",
-          "sha256": "fdf95f6448899b85016238605eaab6d073bb26d349e3c62b49ffbf135bb15d88"
+          "fileName": "xpack-patchelf-0.17.0-1-darwin-x64.tar.gz",
+          "sha256": "ff21aec710eac0c080cf665d081cb68343be19eb8046eeb5275325f0358eb73b"
         },
         "linux-arm64": {
-          "fileName": "xpack-patchelf-0.16.1-1-linux-arm64.tar.gz",
-          "sha256": "d2a653626b5b92cc36778b03312b544335e61a8b62a0e455db33351b721c1ae8"
+          "fileName": "xpack-patchelf-0.17.0-1-linux-arm64.tar.gz",
+          "sha256": "9bc0efd8def0b3106c159284576a55c3fb3fb245c5686bcd81bbf4987abdd35b"
         },
         "linux-arm": {
-          "fileName": "xpack-patchelf-0.16.1-1-linux-arm.tar.gz",
-          "sha256": "f35349a340438a84c2b111f39e4c5a40dd885951812f345afb56db2eb9cd3c1f"
+          "fileName": "xpack-patchelf-0.17.0-1-linux-arm.tar.gz",
+          "sha256": "240f08679f86b9de243c597760ea1e6ed288ad4b09630d9b6197eda34cbc353a"
         },
         "linux-x64": {
-          "fileName": "xpack-patchelf-0.16.1-1-linux-x64.tar.gz",
-          "sha256": "2b2b11bb3d2ca3e1aa32b7b135a443c784a2568eb4f449cf32ae55e8451184a3"
+          "fileName": "xpack-patchelf-0.17.0-1-linux-x64.tar.gz",
+          "sha256": "488a511634575d52de46f68d6e56147932e21763ecb1168b775d5e2ab789ba92"
         }
       }
     },
