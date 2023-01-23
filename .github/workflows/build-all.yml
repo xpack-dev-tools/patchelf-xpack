@@ -34,7 +34,7 @@ on:
         description: 'The version of xpm to install'
         required: false
         type: string
-        default: 'latest'
+        default: 'next'
       xpm_install_loglevel:
         description: 'Optional loglevel for xpm install'
         required: false
@@ -301,7 +301,7 @@ jobs:
         run: |
           xpm install --config darwin-x64 --loglevel ${{ github.event.inputs.xpm_install_loglevel }} ${{ github.event.inputs.xpm_install_options }}
           xpm run build --config darwin-x64
-  
+
       - name: 'Publish pre-release'
         # https://github.com/ncipollo/release-action
         uses: ncipollo/release-action@v1
@@ -367,7 +367,7 @@ jobs:
           xpm install --config darwin-arm64 --loglevel ${{ github.event.inputs.xpm_install_loglevel }} ${{ github.event.inputs.xpm_install_options }}
           xpm run build --config darwin-arm64
 
-  
+
       - name: 'Publish pre-release'
         # https://github.com/ncipollo/release-action
         uses: ncipollo/release-action@v1
