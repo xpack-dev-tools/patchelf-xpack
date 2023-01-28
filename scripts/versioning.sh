@@ -12,9 +12,9 @@
 
 function application_build_versioned_components()
 {
-  XBB_PATCHELF_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||')"
+  XBB_PATCHELF_VERSION="$(xbb_strip_version_pre_release "${XBB_RELEASE_VERSION}")"
 
-  # Keep them in sync with combo archive content.
+  # Keep them in sync with the combo archive content.
   if [[ "${XBB_RELEASE_VERSION}" =~ 0[.].*[.].*-.* ]]
   then
     # -------------------------------------------------------------------------
