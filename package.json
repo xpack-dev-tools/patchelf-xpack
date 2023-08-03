@@ -60,7 +60,7 @@
       "patchelf": "./.content/bin/patchelf"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^1.4.15"
+      "@xpack-dev-tools/xbb-helper": "^1.5.0"
     },
     "properties": {
       "appName": "NixOS PatchELF",
