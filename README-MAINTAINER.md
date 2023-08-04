@@ -408,6 +408,16 @@ total 796
 -rw-r--r-- 1 root root    107 Oct 24 20:31 xpack-patchelf-0.17.2-1-linux-arm.tar.gz.sha
 ```
 
+### Build a debug version
+
+In some cases it is necessary to run a debug session in the binaries,
+or even in the libraries functions.
+
+For these cases, the build script accepts the `--debug` options.
+
+There are also xPack actions that use this option (`build-develop-debug`
+and `docker-build-develop-debug`).
+
 ### Files cache
 
 The XBB build scripts use a local cache such that files are downloaded only
