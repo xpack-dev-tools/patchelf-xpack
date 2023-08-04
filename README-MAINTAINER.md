@@ -235,6 +235,12 @@ Run the native build:
 xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/patchelf-xpack.git
 ```
 
+For a debug build:
+
+```sh
+xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/patchelf-xpack.git
+```
+
 The build takes a few moments.
 
 When functional, push the `xpack-develop` branch to GitHub.
