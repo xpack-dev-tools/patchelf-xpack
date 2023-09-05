@@ -4,6 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-05
 
+* v0.18.0-1.1 published on npmjs.com
+* 5686edc README update
+* 2cae5d0 package.json: update urls for 0.18.0-1.1 release
+* d7ab147 CHANGELOG update
+* 764a9f7 README update
 * fe384a3 package.json: fix deps
 * 5e9eabf package-lock.json update
 * 35766f6 README update
