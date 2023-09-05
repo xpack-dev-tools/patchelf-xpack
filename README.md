@@ -111,9 +111,10 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/patchelf/0.18.0-1.1/.con
 │   ├── patches
 │   └── scripts
 └── share
-    └── doc
+    ├── doc
+    └── zsh
 
-7 directories, 3 files
+9 directories, 3 files
 ```
 
 No other files are installed in any system folders or other locations.
