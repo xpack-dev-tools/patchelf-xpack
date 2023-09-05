@@ -6,33 +6,10 @@
 
 ## Prerequisites
 
-The build scripts run on GNU/Linux and macOS. The Windows binaries are
-generated on Intel GNU/Linux, using [mingw-w64](https://mingw-w64.org).
+The build scripts run on GNU/Linux and macOS. There are no Windows binaries.
 
-For GNU/Linux, the prerequisites are:
-
-- `curl` (installed via the system package manager)
-- `git` (installed via the system package manager)
-- `docker` (preferably a recent one, installed from **docker.com**)
-- `npm` (shipped with Node.js; installed via **nvm**, **not**
-  the system package manager)
-- `xpm` (installed via `npm`)
-
-For macOS, the prerequisites are:
-
-- `npm` (shipped with Node.js; installed via **nvm**)
-- `xpm` (installed via `npm`)
-- the **Command Line Tools** from Apple
-
-For details on installing them, please read the
-[XBB prerequisites](https://xpack.github.io/xbb/prerequisites/) page.
-
-If you already have a functional configuration from a previous run,
-it is recommended to update **xpm**:
-
-```sh
-npm install --location=global xpm@latest
-```
+For details on installing the prerequisites, please read the
+[XBB prerequisites page](https://xpack.github.io/xbb/prerequisites/).
 
 ## Get project sources
 
@@ -130,8 +107,8 @@ and compare the the xPack [Releases](https://github.com/xpack-dev-tools/patchelf
 
 ### Increase the version
 
-Determine the version (like `0.17.2`) and update the `scripts/VERSION`
-file; the format is `0.17.2-1`. The fourth number is the xPack release number
+Determine the version (like `0.18.0`) and update the `scripts/VERSION`
+file; the format is `0.18.0-1`. The fourth number is the xPack release number
 of this version. A fifth number will be added when publishing
 the package on the `npm` server.
 
@@ -141,7 +118,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-dev-tools/patchelf-xpack/issues/>
 
-and fix them; assign them to a milestone (like `0.17.2-1`).
+and fix them; assign them to a milestone (like `0.18.0-1`).
 
 ### Check `README.md`
 
@@ -162,8 +139,8 @@ Use a new version, suffixed by `.pre`.
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v0.17.2-1 prepared_
-- commit with a message like _prepare v0.17.2-1_
+- add a new entry like _* v0.18.0-1 prepared_
+- commit with a message like _prepare v0.18.0-1_
 
 ### Merge upstream repo
 
@@ -199,43 +176,15 @@ Update the build scripts (or clone them at the first use):
 ```sh
 git -C ~/Work/xpack-dev-tools/patchelf-xpack.git pull
 
-xpm run deep-clean -C ~/Work/xpack-dev-tools/patchelf-xpack.git
-```
-
-If the helper is also under development and needs changes,
-update it too:
-
-```sh
-git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull
-```
-
-Install project dependencies:
-
-```sh
 xpm run install -C ~/Work/xpack-dev-tools/patchelf-xpack.git
-```
 
-If the writable helper is used,
-link it in the place of the read-only package:
-
-```sh
+git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git
 
 xpm run link-deps -C ~/Work/xpack-dev-tools/patchelf-xpack.git
-```
 
-For repeated builds, clean the build folder and install de
-build configuration dependencies:
-
-```sh
 xpm run deep-clean --config darwin-x64  -C ~/Work/xpack-dev-tools/patchelf-xpack.git
-
 xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/patchelf-xpack.git
-```
-
-Run the native build:
-
-```sh
 xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/patchelf-xpack.git
 ```
 
@@ -277,8 +226,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/patchelf-xpack.git/build/darwin-x64/deploy
 total 224
--rw-r--r--  1 ilg  staff  109290 Oct 24 23:28 xpack-patchelf-0.17.2-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff     108 Oct 24 23:28 xpack-patchelf-0.17.2-1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  109290 Oct 24 23:28 xpack-patchelf-0.18.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff     108 Oct 24 23:28 xpack-patchelf-0.18.0-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -311,8 +260,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/patchelf-xpack.git/build/darwin-arm64/deploy
 total 200
--rw-r--r--  1 ilg  staff  95328 Oct 24 23:28 xpack-patchelf-0.17.2-1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff    110 Oct 24 23:28 xpack-patchelf-0.17.2-1-darwin-arm64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  95328 Oct 24 23:28 xpack-patchelf-0.18.0-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff    110 Oct 24 23:28 xpack-patchelf-0.18.0-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -324,7 +273,7 @@ start a VS Code remote session, or connect with a terminal:
 caffeinate ssh xbbli
 ```
 
-##### Build the GNU/Linux binaries
+##### Build the Intel GNU/Linux binaries
 
 Update the build scripts (or clone them at the first use):
 
@@ -347,11 +296,11 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/patchelf-xpack.git/build/linux-x64/deploy
 total 904
--rw-r--r-- 1 root root 918500 Oct 24 20:29 xpack-patchelf-0.17.2-1-linux-x64.tar.gz
--rw-r--r-- 1 root root    107 Oct 24 20:29 xpack-patchelf-0.17.2-1-linux-x64.tar.gz.sha
+-rw-r--r-- 1 root root 918500 Oct 24 20:29 xpack-patchelf-0.18.0-1-linux-x64.tar.gz
+-rw-r--r-- 1 root root    107 Oct 24 20:29 xpack-patchelf-0.18.0-1-linux-x64.tar.gz.sha
 ```
 
-##### Build the Windows binaries
+##### Build the Intel Windows binaries
 
 There are no Windows binaries.
 
@@ -385,8 +334,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/patchelf-xpack.git/build/linux-arm64/deploy
 total 848
--rw-r--r-- 1 root root 863136 Oct 24 20:31 xpack-patchelf-0.17.2-1-linux-arm64.tar.gz
--rw-r--r-- 1 root root    109 Oct 24 20:31 xpack-patchelf-0.17.2-1-linux-arm64.tar.gz.sha
+-rw-r--r-- 1 root root 863136 Oct 24 20:31 xpack-patchelf-0.18.0-1-linux-arm64.tar.gz
+-rw-r--r-- 1 root root    109 Oct 24 20:31 xpack-patchelf-0.18.0-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -419,8 +368,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/patchelf-xpack.git/build/linux-arm/deploy
 total 796
--rw-r--r-- 1 root root 807383 Oct 24 20:31 xpack-patchelf-0.17.2-1-linux-arm.tar.gz
--rw-r--r-- 1 root root    107 Oct 24 20:31 xpack-patchelf-0.17.2-1-linux-arm.tar.gz.sha
+-rw-r--r-- 1 root root 807383 Oct 24 20:31 xpack-patchelf-0.18.0-1-linux-arm.tar.gz
+-rw-r--r-- 1 root root    107 Oct 24 20:31 xpack-patchelf-0.18.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Update README-MAINTAINER listing output
@@ -635,13 +584,13 @@ xattr -cr ${HOME}/Downloads/xpack-*
 On GNU/Linux and macOS systems, use:
 
 ```sh
-.../xpack-patchelf-0.17.2-1/bin/patchelf --version
-patchelf 0.17.2
+.../xpack-patchelf-0.18.0-1/bin/patchelf --version
+patchelf 0.18.0
 ```
 
 ## Create a new GitHub pre-release draft
 
-- in `CHANGELOG.md`, add the release date and a message like _* v0.17.2-1 released_
+- in `CHANGELOG.md`, add the release date and a message like _* v0.18.0-1 released_
 - commit with _CHANGELOG update_
 - check and possibly update the `templates/body-github-release-liquid.md`
 - push the `xpack-develop` branch
@@ -652,8 +601,8 @@ The workflow result and logs are available from the
 
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/patchelf-xpack/releases/)
-tagged like **v0.17.2-1** (mind the dash in the middle!) and
-named like **xPack NixOS PatchELF v0.17.2-1** (mind the dash),
+tagged like **v0.18.0-1** (mind the dash in the middle!) and
+named like **xPack NixOS PatchELF v0.18.0-1** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -679,7 +628,7 @@ If any, refer to closed
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like _xPack NixOS PatchELF v0.17.2-1 released_
+  use a message like _xPack NixOS PatchELF v0.18.0-1 released_
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
@@ -720,18 +669,18 @@ watching this project.
 - compare the SHA sums with those shown by `cat *.sha`
 - check the executable names
 - commit all changes, use a message like
-  _package.json: update urls for 0.17.2-1.1 release_ (without _v_)
+  _package.json: update urls for 0.18.0-1.1 release_ (without _v_)
 
 ## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _* v0.17.2-1.1 published on npmjs.com_
-- commit with a message like _CHANGELOG: publish npm v0.17.2-1.1_
+- update `CHANGELOG.md`, add a line like _* v0.18.0-1.1 published on npmjs.com_
+- commit with a message like _CHANGELOG: publish npm v0.18.0-1.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version 0.17.2-1.1`; the first 4 numbers are the same as the
+- `npm version 0.18.0-1.1`; the first 4 numbers are the same as the
   GitHub release; the fifth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
@@ -760,12 +709,12 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-dev-tools/patchelf`
-- `npm dist-tag add @xpack-dev-tools/patchelf@0.17.2-1.1 latest`
+- `npm dist-tag add @xpack-dev-tools/patchelf@0.18.0-1.1 latest`
 - `npm dist-tag ls @xpack-dev-tools/patchelf`
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/patchelf@0.17.2-1.1`
+- `npm unpublish @xpack-dev-tools/patchelf@0.18.0-1.1`
 
 ## Update the Web
 
@@ -787,7 +736,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@xpack_project` account
-- paste the release name like **xPack NixOS PatchELF v0.17.2-1 released**
+- paste the release name like **xPack NixOS PatchELF v0.18.0-1 released**
 - paste the link to the Web page
   [release](https://xpack.github.io/patchelf/releases/)
 - click the **Tweet** button
