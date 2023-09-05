@@ -4,8 +4,13 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-05
 
-* v0.18.0-1 prepared
-* 130588e dot.*ignore update
+* fe384a3 package.json: fix deps
+* 5e9eabf package-lock.json update
+* 35766f6 README update
+* b5b5961 prepare v0.18.0-1
+* 5497176 package.json: bump deps
+* 20a58d1 prepare v0.18.0-1
+* 2ba0234 .vscode/settings.json: ignoreWords* 130588e dot.*ignore update
 * 1af35c8 re-generate workflows
 
 ## 2023-09-03
