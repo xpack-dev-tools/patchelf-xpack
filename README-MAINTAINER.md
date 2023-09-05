@@ -171,9 +171,8 @@ triggered via the VS Code graphical interface, using the
 For Intel macOS, first run the build on the development machine
 (`wksi`, a recent macOS):
 
-Update the build scripts (or clone them at the first use):
-
 ```sh
+# Update the build scripts.
 git -C ~/Work/xpack-dev-tools/patchelf-xpack.git pull
 
 xpm run install -C ~/Work/xpack-dev-tools/patchelf-xpack.git
