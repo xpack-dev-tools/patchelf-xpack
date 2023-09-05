@@ -36,23 +36,23 @@
       "platforms": {
         "darwin-arm64": {
           "fileName": "xpack-patchelf-0.18.0-1-darwin-arm64.tar.gz",
-          "sha256": "aa2f1310f65fd544f9c99da6618b3cefe8d63aaf7fd583de7fd8c8fe490bfa23"
+          "sha256": "c79162020bcd3fc32bb4c70e87384ae98e629a8e083f0410dd77fa59273c8bd2"
         },
         "darwin-x64": {
           "fileName": "xpack-patchelf-0.18.0-1-darwin-x64.tar.gz",
-          "sha256": "de235581892baf8be2cc4a57216c8414ed697a47fbe248bc0009604a90c73ed5"
+          "sha256": "7c41af0c72ed1c6bf27f57124ce3fa503bb94910f469613beb58cafb913df70a"
         },
         "linux-arm64": {
           "fileName": "xpack-patchelf-0.18.0-1-linux-arm64.tar.gz",
-          "sha256": "678f6e43bc38e62260f832cc13a45226c537c322cef32d5802175063a11a6a6d"
+          "sha256": "1caf13e06cbf3c256e8796b48d8277d178111576d0172fa41c879435515d1a1e"
         },
         "linux-arm": {
           "fileName": "xpack-patchelf-0.18.0-1-linux-arm.tar.gz",
-          "sha256": "4e57e3141fd10c31315928c26bc2de51d86fc2200ad380e00cb29ce5affbd741"
+          "sha256": "a9b7ea8b688e612b33a499a25d9a7b7eb939c2f2f4aae873c1025238ecea9895"
         },
         "linux-x64": {
           "fileName": "xpack-patchelf-0.18.0-1-linux-x64.tar.gz",
-          "sha256": "3a4e2b27ad4d825c4417d051dc16ba3ab5f1312aae3b47a670a502bb2517706d"
+          "sha256": "563da19b560b159815e85b3358c4fe3fb3c81985f8c3a010f9dc038b6f707d1a"
         }
       }
     },
