@@ -15,7 +15,9 @@
       "platforms": "linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64",
       "customFields": {
         "programName": "patchelf",
-        "branding": "patchelf "
+        "branding": "patchelf ",
+        "$link": "https://github.com/NixOS/patchelf/releases/",
+        "patchelfReleaseDate": "23 Apr 2023"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
