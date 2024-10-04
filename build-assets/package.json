@@ -17,7 +17,8 @@
         "programName": "patchelf",
         "branding": "patchelf ",
         "$link": "https://github.com/NixOS/patchelf/releases/",
-        "patchelfReleaseDate": "23 Apr 2023"
+        "patchelfReleaseDate": "23 Apr 2023",
+        "isSecondaryTool": "true"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
