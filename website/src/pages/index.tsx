@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from xPack Binary Development Tools`}
-      description="A binary xPack with the NixOS PatchELF executables">
+      description="A binary package with the NixOS PatchELF executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
