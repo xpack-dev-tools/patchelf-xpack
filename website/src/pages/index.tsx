@@ -41,9 +41,9 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from xPack Binary Development Tools`}
-      description="A binary package with the NixOS PatchELF executables">
+    <Layout 
+      title={`Hello from patchelf`}
+      description="A binary package with the patchelf executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

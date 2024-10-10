@@ -1,0 +1,25 @@
+
+import CodeBlock from '@theme/CodeBlock';
+
+import customField from '@site/src/libs/customField';
+
+{/* ------------------------------------------------------------------------ */}
+
+<CodeBlock language="console"> {
+`$ tree -L 2 ~/.local/xPacks/\@xpack-dev-tools/patchelf/${customField('version')}/.content/
+/home/ilg/.local/xPacks/\@xpack-dev-tools/patchelf/${customField('version')}/.content/
+├── README.md
+├── bin
+│   └── patchelf
+├── distro-info
+│   └── licenses
+├── libexec
+│   ├── libgcc_s.so.1
+│   ├── libstdc++.so.6 -> libstdc++.so.6.0.32
+│   └── libstdc++.so.6.0.32
+└── share
+    ├── doc
+    └── zsh
+
+7 directories, 5 files
+`} </CodeBlock>
