@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Hello from patchelf`}
+      title={`Welcome to patchelf`}
       description="A binary package with the patchelf executables">
       <HomepageHeader />
       <main>
