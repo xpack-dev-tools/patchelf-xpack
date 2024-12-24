@@ -1,0 +1,7 @@
+Sitemap: https://xpack-dev-tools.github.io/patchelf-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /patchelf-xpack/blog/archive/
+Disallow: /patchelf-xpack/blog/authors/
+Disallow: /patchelf-xpack/blog/page/
+Disallow: /patchelf-xpack/blog/tags/
