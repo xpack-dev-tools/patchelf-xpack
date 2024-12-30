@@ -1,7 +1,7 @@
 {
   "name": "@xpack-dev-tools/patchelf",
   "version": "0.18.0-1.1",
-  "description": "A binary xPack with the NixOS PatchELF executable",
+  "description": "A binary xpm package with the NixOS PatchELF executable",
   "main": "",
   "scripts": {
     "postversion": "git push origin --all && git push origin --tags",
