@@ -5,8 +5,7 @@
 
 # The xPack NixOS PatchELF
 
-A standalone cross-platform (Windows, macOS, GNU/Linux)
-binary distribution of NixOS PatchELF,
+A standalone, cross-platform (GNU/Linux, macOS) binary distribution of NixOS PatchELF,
 intended for reproducible builds.
 
 ## Project documentation
