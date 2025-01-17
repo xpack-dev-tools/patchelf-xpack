@@ -71,7 +71,8 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "NixOS PatchELF"
+    "longName": "NixOS PatchELF",
+    "shortName": "patchelf"
   },
   "engines": {
     "node": " >=18.0.0"
