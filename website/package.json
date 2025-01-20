@@ -57,13 +57,11 @@
     ]
   },
   "websiteConfig": {
-    "customFields": {
-      "programName": "patchelf",
-      "branding": "patchelf ",
-      "$link": "https://github.com/NixOS/patchelf/releases/",
-      "patchelfReleaseDate": "23 Apr 2023",
-      "isSecondaryTool": "true"
-    }
+    "programName": "patchelf",
+    "branding": "patchelf ",
+    "isSecondaryTool": "true",
+    "$link": "https://github.com/NixOS/patchelf/releases/",
+    "patchelfReleaseDate": "23 Apr 2023"
   },
   "engines": {
     "node": ">=18.0"
