@@ -246,7 +246,7 @@ The command to install the **latest** available version of **patchelf** is:
 To install a **specific version**, specify it explicitly:
 
 <CodeBlock language="sh"> {
-`xpm install @xpack-dev-tools/patchelf@${customField('releaseVersion')} --verbose
+`xpm install @xpack-dev-tools/patchelf@0.18.0-1.1 --verbose
 `} </CodeBlock>
 
 <Tabs groupId="operating-systems">
@@ -349,7 +349,7 @@ The result looks like this:
     "dependencies": {},
     "devDependencies": {
       "@xpack-dev-tools/patchelf": {
-        "specifier": "${customField('xpackVersion')}.${customField('npmSubversion')}",
+        "specifier": "0.18.0-1.1",
         "local": "link",
         "platforms": "all"
       }
@@ -405,7 +405,7 @@ the project build configurations need a PATH adjustment:
 <TabItem value="macos" label="macOS">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/patchelf/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/bin:$PATH
+`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/patchelf/0.18.0-1.1/.content/bin:$PATH
 `} </CodeBlock>
 
 </TabItem>
@@ -413,7 +413,7 @@ the project build configurations need a PATH adjustment:
 <TabItem value="linux" label="GNU/Linux">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/patchelf/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/bin:$PATH
+`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/patchelf/0.18.0-1.1/.content/bin:$PATH
 `} </CodeBlock>
 
 </TabItem>
@@ -503,8 +503,8 @@ are packed as `.tar.gz` archives.
 Download the latest version named like:
 
 <ul>
-<li><code>xpack-patchelf-{customField('xpackVersion')}-darwin-x64.tar.gz</code></li>
-<li><code>xpack-patchelf-{customField('xpackVersion')}-darwin-arm64.tar.gz</code></li>
+<li><code>xpack-patchelf-0.18.0-1-darwin-x64.tar.gz</code></li>
+<li><code>xpack-patchelf-0.18.0-1-darwin-arm64.tar.gz</code></li>
 </ul>
 
 :::note
@@ -519,14 +519,14 @@ unpack the archive and move it to a location of your choice.
 
 The recommended location is
 the <code>~/Library/xPacks/patchelf</code> folder, for
-example <code>/Users/ilg/Library/xPacks/patchelf/xpack-patchelf-{customField('xpackVersion')}</code>:
+example <code>/Users/ilg/Library/xPacks/patchelf/xpack-patchelf-0.18.0-1</code>:
 
 <CodeBlock language="console"> {
 `mkdir -p ~/Library/xPacks/patchelf
 cd ~/Library/xPacks/patchelf
 
-tar xvf ~/Downloads/xpack-patchelf-${customField('xpackVersion')}-darwin-x64.tar.gz
-chmod -R -w xpack-patchelf-${customField('xpackVersion')}
+tar xvf ~/Downloads/xpack-patchelf-0.18.0-1-darwin-x64.tar.gz
+chmod -R -w xpack-patchelf-0.18.0-1
 `} </CodeBlock>
 
 </TabItem>
@@ -538,9 +538,9 @@ are packed as `.tar.gz` archives.
 Download the latest version named like:
 
 <ul>
-<li><code>xpack-patchelf-{customField('xpackVersion')}-linux-x64.tar.gz</code></li>
-<li><code>xpack-patchelf-{customField('xpackVersion')}-linux-arm64.tar.gz</code></li>
-<li><code>xpack-patchelf-{customField('xpackVersion')}-linux-arm.tar.gz</code></li>
+<li><code>xpack-patchelf-0.18.0-1-linux-x64.tar.gz</code></li>
+<li><code>xpack-patchelf-0.18.0-1-linux-arm64.tar.gz</code></li>
+<li><code>xpack-patchelf-0.18.0-1-linux-arm.tar.gz</code></li>
 </ul>
 
 :::note
@@ -555,14 +555,14 @@ unpack the archive and move it to a location of your choice.
 
 The recommended location is
 the <code>~/.local/xPacks/patchelf</code> folder, for
-example <code>/home/ilg/.local/xPacks/patchelf/xpack-patchelf-{customField('xpackVersion')}</code>:
+example <code>/home/ilg/.local/xPacks/patchelf/xpack-patchelf-0.18.0-1</code>:
 
 <CodeBlock language="console"> {
 `mkdir -p ~/.local/xPacks/patchelf
 cd ~/.local/xPacks/patchelf
 
-tar xvf ~/Downloads/xpack-patchelf-${customField('xpackVersion')}-linux-x64.tar.gz
-chmod -R -w xpack-patchelf-${customField('xpackVersion')}
+tar xvf ~/Downloads/xpack-patchelf-0.18.0-1-linux-x64.tar.gz
+chmod -R -w xpack-patchelf-0.18.0-1
 `} </CodeBlock>
 
 </TabItem>
