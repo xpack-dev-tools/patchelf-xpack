@@ -51,10 +51,6 @@
           "fileName": "xpack-patchelf-0.18.0-1-linux-arm64.tar.gz",
           "sha256": "1caf13e06cbf3c256e8796b48d8277d178111576d0172fa41c879435515d1a1e"
         },
-        "linux-arm": {
-          "fileName": "xpack-patchelf-0.18.0-1-linux-arm.tar.gz",
-          "sha256": "a9b7ea8b688e612b33a499a25d9a7b7eb939c2f2f4aae873c1025238ecea9895"
-        },
         "linux-x64": {
           "fileName": "xpack-patchelf-0.18.0-1-linux-x64.tar.gz",
           "sha256": "563da19b560b159815e85b3358c4fe3fb3c81985f8c3a010f9dc038b6f707d1a"
