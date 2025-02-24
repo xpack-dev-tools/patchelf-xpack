@@ -67,8 +67,9 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "NixOS PatchELF",
-    "shortName": "patchelf"
+    "descriptiveName": "NixOS PatchELF",
+    "permalinkName": "patchelf",
+    "useSelfHostedRunners": "true"
   },
   "engines": {
     "node": " >=18.0.0"
