@@ -76,7 +76,8 @@
     "branding": "patchelf ",
     "isSecondaryTool": "true",
     "$link": "https://github.com/NixOS/patchelf/releases/",
-    "patchelfReleaseDate": "23 Apr 2023"
+    "patchelfReleaseDate": "23 Apr 2023",
+    "shareOnTwitter": "true"
   },
   "engines": {
     "node": ">=18.0"
