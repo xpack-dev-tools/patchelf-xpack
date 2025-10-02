@@ -43,7 +43,7 @@ function application_build_versioned_components()
     xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
-    # https://ftp.gnu.org/gnu/coreutils/
+    # https://ftpmirror.gnu.org/gnu/coreutils/
     patchelf_build "${XBB_PATCHELF_VERSION}"
 
     # -------------------------------------------------------------------------
