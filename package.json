@@ -4,9 +4,14 @@
   "description": "A binary xpm package with the NixOS PatchELF executable",
   "main": "",
   "scripts": {
-    "postversion": "git push origin --all && git push origin --tags",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "liquidjs": "liquidjs"
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --xpack-dev-tools",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-outdated": "npm outdated",
+    "npm-pack": "npm pack",
+    "npm-link": "npm link",
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
+    "postversion": "git push origin --all && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -28,7 +33,7 @@
   },
   "license": "MIT",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
       "baseUrl": "https://github.com/xpack-dev-tools/patchelf-xpack/releases/download/v0.18.0-1",
@@ -46,18 +51,29 @@
           "fileName": "xpack-patchelf-0.18.0-1-linux-arm64.tar.gz",
           "sha256": "1caf13e06cbf3c256e8796b48d8277d178111576d0172fa41c879435515d1a1e"
         },
-        "linux-arm": {
-          "fileName": "xpack-patchelf-0.18.0-1-linux-arm.tar.gz",
-          "sha256": "a9b7ea8b688e612b33a499a25d9a7b7eb939c2f2f4aae873c1025238ecea9895"
-        },
         "linux-x64": {
           "fileName": "xpack-patchelf-0.18.0-1-linux-x64.tar.gz",
           "sha256": "563da19b560b159815e85b3358c4fe3fb3c81985f8c3a010f9dc038b6f707d1a"
         }
       }
     },
-    "bin": {
+    "executables": {
       "patchelf": "./.content/bin/patchelf"
     }
+  },
+  "devDependencies": {
+    "del-cli": "^7.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.23.0"
+  },
+  "topConfig": {
+    "descriptiveName": "xPack NixOS PatchELF",
+    "upstreamDescriptiveName": "NixOS PatchELF",
+    "permalinkName": "patchelf",
+    "skipCiTests": "true",
+    "useSelfHostedRunners": "false"
+  },
+  "engines": {
+    "node": " >=20.0"
   }
 }

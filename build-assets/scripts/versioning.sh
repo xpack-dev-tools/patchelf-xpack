@@ -2,13 +2,13 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the xPack project (http://xpack.github.io).
-# Copyright (c) 2022 Liviu Ionescu. All rights reserved.
+# Copyright (c) 2022-2025 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ function application_build_versioned_components()
     xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
-    # https://ftp.gnu.org/gnu/coreutils/
+    # https://ftpmirror.gnu.org/gnu/coreutils/
     patchelf_build "${XBB_PATCHELF_VERSION}"
 
     # -------------------------------------------------------------------------
