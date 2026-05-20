@@ -1,0 +1,8 @@
+{
+  "descriptiveName": "xPack NixOS PatchELF",
+  "permalinkName": "patchelf",
+  "preferredName": "xPack NixOS PatchELF",
+  "upstreamDescriptiveName": "NixOS PatchELF",
+  "skipCiTests": true,
+  "useSelfHostedRunners": false
+}

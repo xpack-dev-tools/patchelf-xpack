@@ -2,7 +2,6 @@
   "name": "@xpack-dev-tools/patchelf",
   "version": "0.18.0-1.1",
   "description": "A binary xpm package with the NixOS PatchELF executable",
-  "main": "",
   "scripts": {
     "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --xpack-dev-tools",
     "npm-install": "npm install",
@@ -61,12 +60,17 @@
       "patchelf": "./.content/bin/patchelf"
     }
   },
+  "$dependenciesUrls": {
+    "del-cli": "https://www.npmjs.com/package/del-cli",
+    "json": "https://www.npmjs.com/package/json",
+    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+  },
   "devDependencies": {
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.23.0"
+    "liquidjs": "^10.27.0"
   },
-  "topConfig": {
+  "_topConfig": {
     "descriptiveName": "xPack NixOS PatchELF",
     "upstreamDescriptiveName": "NixOS PatchELF",
     "permalinkName": "patchelf",
