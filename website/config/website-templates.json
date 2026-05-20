@@ -1,0 +1,8 @@
+{
+  "branding": "patchelf ",
+  "$link": "https://github.com/NixOS/patchelf/releases/",
+  "patchelfReleaseDate": "23 Apr 2023",
+  "programName": "patchelf",
+  "isSecondaryTool": true,
+  "shareOnTwitter": true
+}
